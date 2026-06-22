@@ -7,7 +7,6 @@ const cart = useCartStore().cart
     <div style="background-color: #F0FDE3; min-height: 100vh;">
         <v-container>
 
-
             <v-row>
                 <v-col md="12" class="bg-secondary">
                     <div class="text-display-medium mb-12 mt-12 text-center">
@@ -15,7 +14,14 @@ const cart = useCartStore().cart
                     </div>
                 </v-col>
             </v-row>
-            <v-row >
+
+            <div v-if="cart.length === 0" class="text-center mt-12">
+                <v-icon icon="mdi-cart-off" size="64" color="grey"></v-icon>
+                <div class="text-h6 mt-4 text-grey">Your cart is empty</div>
+                <v-btn color="primary" class="mt-4" to="/books">Browse Books</v-btn>
+            </div>
+
+            <v-row v-else>
                 <v-col md="12" v-for="item in cart">
                     <v-card color="primary" class="py-3">
                         <v-row>
@@ -41,6 +47,35 @@ const cart = useCartStore().cart
     </v-container>
     </div>
 
+    <!-- Footer -->
+  <v-container class="bg-primary" max-width="100%">
+    <v-row>
+        <v-col>
+            <div allign="center">
+                <router-link to="/">
+                    <v-img src="/logo.png" width="50%" height="50%" ></v-img>
+                </router-link>
+
+                <p> Copyright Novel Nook Online Book Store &copy; 2026</p>
+            </div>
+        </v-col>
+        <v-col md="4" >
+            <div class="text-center">
+                <p>Follow us on:</p>
+                <v-icon icon="mdi-instagram"></v-icon>
+                <v-icon icon="mdi-twitter"></v-icon>
+                <v-icon icon="mdi-facebook"></v-icon>
+            </div>
+        </v-col>
+        <v-col md="4">
+            <div class="text-center">
+                <p>Contact Us:</p>
+                <p>Email: info@novelnook.com</p>
+                <p>Phone: +254795164644</p>
+            </div>
+        </v-col>
+    </v-row>
+  </v-container>
 
 </template>
 
