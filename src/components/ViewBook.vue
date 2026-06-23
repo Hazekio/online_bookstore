@@ -33,7 +33,7 @@ function buy(book){
         <v-row>
             <v-col md="6">
             <v-card>
-                <v-img class="align-end text-white" height="620" :src="book.image"  ></v-img>
+                <v-img class="align-end text-white" height="620" :src="book.image" ></v-img>
             </v-card>
             </v-col>
             <v-col md="6" >
@@ -50,7 +50,7 @@ function buy(book){
                                 </v-col>
                             </v-row>
                         <v-card-text style="height: 300px; overflow-y: auto;"> {{book.long_description}} </v-card-text>
-                        <v-card-subtitle>{{book.price}}</v-card-subtitle>
+                        <v-card-subtitle> Ksh {{book.price}}</v-card-subtitle>
                         <v-card-text> 
                             <v-row>
                                 <v-col md="4">Quantity</v-col>
